@@ -160,6 +160,7 @@
 	--font-sans: var(--font-sans);
 	--font-mono: var(--font-mono);
 	--font-serif: var(--font-serif);
+	--font-handwritten: var(--font-handwritten);
 
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
@@ -182,10 +183,6 @@
 	--tracking-wider: calc(var(--tracking-normal) + 0.05em);
 	--tracking-widest: calc(var(--tracking-normal) + 0.1em);
 
-	--text-h1: 3.815rem;
-	--text-h2: 3.052rem;
-	--text-h3: 2.441rem;
-	--text-h4: 1.953rem;
 	--font-heading: var(--font-sans);
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
@@ -201,38 +198,49 @@
 		letter-spacing: var(--tracking-normal);
 	}
 
-	/* Typography */
-	h1,
-	h2,
-	h3,
-	h4 {
-		@apply leading-[1.2] tracking-tighter font-bold text-balance;
-	}
-	h1 {
-		font-size: var(--text-h1);
-	}
-	h2 {
-		font-size: var(--text-h2);
-	}
-	h3 {
-		font-size: var(--text-h3);
-	}
-	h4 {
-		font-size: var(--text-h4);
-	}
-
-	p,
-	span {
-		@apply text-[1rem] leading-[1.6] font-medium text-pretty;
-	}
-
-	.small {
-		@apply text-[0.8rem] leading-[1.6] font-medium tracking-wide text-pretty;
-	}
-	.tiny {
-		@apply text-[0.64rem] leading-[1.6] font-medium tracking-wide text-pretty text-muted-foreground;
-	}
 	html {
 		@apply font-sans;
 	}
+}
+
+/* Typography */
+
+@utility type-1 {
+	@apply text-[0.64rem] leading-[1.6] font-medium tracking-wide text-pretty text-muted-foreground;
+}
+
+@utility type-2 {
+	@apply text-[0.8rem] leading-[1.6] font-medium tracking-wide text-pretty;
+}
+
+@utility type-3 {
+	@apply text-[1rem] leading-[1.6] font-medium text-pretty;
+}
+
+@utility type-4 {
+	@apply text-[1.25rem] leading-[1.2] tracking-tighter font-bold text-balance;
+}
+
+@utility type-5 {
+	@apply text-[1.563rem] leading-[1.2] tracking-tighter font-bold text-balance;
+}
+
+@utility type-6 {
+	@apply text-[1.953rem] leading-[1.2] tracking-tighter font-bold text-balance;
+}
+
+@utility type-7 {
+	@apply text-[2.441rem] leading-[1.2] tracking-tighter font-bold text-balance;
+}
+
+@utility type-8 {
+	@apply text-[3.052rem] leading-[1.2] tracking-tighter font-bold text-balance;
+}
+
+@utility type-9 {
+	@apply text-[3.815rem] leading-[1.2] tracking-tighter font-bold text-balance;
+}
+
+@utility type-button {
+	@apply text-[0.8rem] leading-none font-medium tracking-wide whitespace-nowrap;
 }

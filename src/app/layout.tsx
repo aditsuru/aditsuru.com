@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caveat, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/app/providers";
 import { cn } from "@/lib/utils";
@@ -16,8 +16,14 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+export const fontHandwritten = Caveat({
+	weight: ["400", "500"],
+	display: "swap",
+	variable: "--font-handwritten",
+});
+
 export const metadata: Metadata = {
-	title: "Sample Project",
+	title: "Adi – Design Engineer",
 	description: "Sample project's description.",
 };
 
@@ -32,11 +38,12 @@ export default function RootLayout({
 			className={cn(
 				"h-full",
 				"antialiased",
+				"font-sans",
+				"dark",
 				geistSans.variable,
 				geistMono.variable,
-				"font-sans",
 				geist.variable,
-				"dark"
+				fontHandwritten.variable
 			)}
 			suppressHydrationWarning
 		>
