@@ -43,10 +43,13 @@ next-env.d.ts
 
 # Media
 *.mp4
-*.jpg
 *.png
+*.jpg
 *.jpeg
 *.mp3
+*.zip
 
-# Temporary files
+# Misc
 _scratchpad.md
+_cheatsheet.md
+/temp

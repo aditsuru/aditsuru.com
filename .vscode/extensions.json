@@ -1,0 +1,8 @@
+{
+	"recommendations": [
+		"biomejs.biome",
+		"streetsidesoftware.code-spell-checker",
+		"bradlc.vscode-tailwindcss",
+		"dsznajder.es7-react-js-snippets"
+	]
+}
