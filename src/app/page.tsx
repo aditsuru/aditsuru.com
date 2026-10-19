@@ -1,15 +1,43 @@
+import {
+	Panel,
+	PanelContent,
+	PanelHeader,
+	PanelTitle,
+	PanelTitleSup,
+	StripeDivider,
+} from "@/components/layout/grid";
+import { ProfileHeader } from "@/components/section/profile-header";
+
 export default function Home() {
 	return (
-		<main className="w-screen h-dvh p-16">
-			<div className="flex flex-col gap-1">
-				<h1 className="type-9">Heading 1</h1>
-				<h2 className="type-8 font-handwritten">Heading 2</h2>
-				<h3>Heading 3</h3>
-				<h4>Heading 4</h4>
-				<p>Paragraph</p>
-				<p className="small">Small Text</p>
-				<span className="tiny">Tiny Text</span>
-			</div>
-		</main>
+		<>
+			<ProfileHeader />
+
+			<StripeDivider />
+
+			<Panel id="about">
+				<PanelHeader className="py-3">
+					<PanelTitle>About</PanelTitle>
+				</PanelHeader>
+				<PanelContent>
+					<p className="type-3">A short paragraph about you goes here.</p>
+				</PanelContent>
+			</Panel>
+
+			<StripeDivider />
+
+			<Panel id="projects">
+				<PanelHeader className="py-300">
+					<PanelTitle>
+						Projects <PanelTitleSup>3</PanelTitleSup>
+					</PanelTitle>
+				</PanelHeader>
+				<PanelContent>
+					<p className="type-3 text-muted-foreground">Project cards go here.</p>
+				</PanelContent>
+			</Panel>
+
+			<StripeDivider />
+		</>
 	);
 }

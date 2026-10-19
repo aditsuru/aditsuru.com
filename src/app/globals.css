@@ -63,6 +63,7 @@
 	--spacing: 0.25rem;
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0 0);
+	--line: color-mix(in oklab, var(--border) 100%, var(--background));
 }
 
 .dark {
@@ -156,6 +157,7 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--color-line: var(--line);
 
 	--font-sans: var(--font-sans);
 	--font-mono: var(--font-mono);
@@ -243,4 +245,34 @@
 
 @utility type-button {
 	@apply text-[0.8rem] leading-none font-medium tracking-wide whitespace-nowrap;
+}
+
+/* Grid */
+@utility screen-line-top {
+	@apply relative;
+	&:before {
+		content: "";
+		@apply absolute top-0 left-[-100vw] -z-1 h-px w-[200vw] bg-line;
+	}
+}
+
+@utility screen-line-bottom {
+	@apply relative;
+	&:after {
+		content: "";
+		@apply absolute bottom-0 left-[-100vw] -z-1 h-px w-[200vw] bg-line;
+	}
+}
+
+@utility diagonal-stripes {
+	@apply [--pattern-foreground:var(--color-line)]/56;
+	@apply bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px];
+}
+
+@utility stripe-divider {
+	@apply relative h-8;
+	&:before {
+		content: "";
+		@apply absolute left-[-100vw] -z-1 h-full w-[200vw] diagonal-stripes;
+	}
 }

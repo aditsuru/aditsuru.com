@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Caveat, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/app/providers";
+import { Navbar } from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
@@ -48,7 +49,14 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body>
-				<Providers>{children}</Providers>
+				<Providers>
+					<div className="relative isolate">
+						<Navbar />
+						<main className="overflow-x-clip px-2">
+							<div className="mx-auto md:max-w-3xl">{children}</div>
+						</main>
+					</div>
+				</Providers>
 			</body>
 		</html>
 	);
