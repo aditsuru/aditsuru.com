@@ -1,39 +1,29 @@
-import {
-	Panel,
-	PanelContent,
-	PanelHeader,
-	PanelTitle,
-	PanelTitleSup,
-	StripeDivider,
-} from "@/components/layout/grid";
+import { Panel, PanelContent, StripeDivider } from "@/components/layout/grid";
+import { DotGrid } from "@/components/misc/dot-grid";
+import { About } from "@/components/section/about";
 import { ProfileHeader } from "@/components/section/profile-header";
+import { SocialLinks } from "@/components/section/social-links";
 
 export default function Home() {
 	return (
 		<>
+			<div className="w-full border-x border-line" />
+			<DotGrid />
 			<ProfileHeader />
 
 			<StripeDivider />
 
-			<Panel id="about">
-				<PanelHeader className="py-3">
-					<PanelTitle>About</PanelTitle>
-				</PanelHeader>
-				<PanelContent>
-					<p className="type-3">A short paragraph about you goes here.</p>
-				</PanelContent>
-			</Panel>
+			<SocialLinks />
 
 			<StripeDivider />
 
-			<Panel id="projects">
-				<PanelHeader className="py-300">
-					<PanelTitle>
-						Projects <PanelTitleSup>3</PanelTitleSup>
-					</PanelTitle>
-				</PanelHeader>
-				<PanelContent>
-					<p className="type-3 text-muted-foreground">Project cards go here.</p>
+			<About />
+
+			<StripeDivider />
+
+			<Panel>
+				<PanelContent className="flex justify-center items-center">
+					<p className="type-8 font-handwritten">Portfolio Under Development</p>
 				</PanelContent>
 			</Panel>
 

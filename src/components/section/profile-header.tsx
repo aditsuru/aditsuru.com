@@ -10,7 +10,7 @@ export const ProfileHeader = () => {
 				<img
 					src="/adi.png"
 					alt=""
-					className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40 outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10"
+					className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40 outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10 m-0.5"
 				/>
 				<div className="border-l border-line grow flex flex-col justify-end">
 					<div className="flex w-full items-center gap-2 pl-4 border-y border-line">

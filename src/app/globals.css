@@ -276,3 +276,31 @@
 		@apply absolute left-[-100vw] -z-1 h-full w-[200vw] diagonal-stripes;
 	}
 }
+
+/* Temp */
+
+@utility dot-grid {
+	--dot-color: color-mix(in oklab, var(--foreground) 16%, transparent);
+	background-image: radial-gradient(
+		circle,
+		var(--dot-color) 1px,
+		transparent 1.5px
+	);
+	background-size: 16px 16px;
+	background-repeat: space;
+}
+
+@utility dot-grid-lit {
+	@apply dot-grid;
+	--dot-color: color-mix(in oklab, var(--foreground) 70%, transparent);
+	mask-image: radial-gradient(
+		circle 140px at var(--x, -999px) var(--y, -999px),
+		#000,
+		transparent
+	);
+	opacity: var(--glow, 0);
+	pointer-events: none;
+	@media (prefers-reduced-motion: no-preference) {
+		transition: opacity 300ms ease-out;
+	}
+}

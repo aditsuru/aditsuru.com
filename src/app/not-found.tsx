@@ -1,4 +1,13 @@
+import Link from "next/link";
+
+import { UnderDevelopment } from "@/components/misc/under-development";
+
 export default function NotFound() {
-	// TODO: update with actual page not found component
-	return <div>Page Not Found</div>;
+	return (
+		<UnderDevelopment>
+			<Link href="/" className="type-2 underline underline-offset-4">
+				Back to home
+			</Link>
+		</UnderDevelopment>
+	);
 }

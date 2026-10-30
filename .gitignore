@@ -43,7 +43,6 @@ next-env.d.ts
 
 # Media
 *.mp4
-*.png
 *.jpg
 *.jpeg
 *.mp3
