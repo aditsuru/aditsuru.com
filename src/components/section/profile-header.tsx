@@ -8,7 +8,7 @@ export const ProfileHeader = () => {
 		<Panel>
 			<PanelContent className="p-0 flex">
 				<img
-					src="/adi.png"
+					src="https://avatars.githubusercontent.com/u/193064835?v=4"
 					alt=""
 					className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40 outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10 m-0.5"
 				/>
