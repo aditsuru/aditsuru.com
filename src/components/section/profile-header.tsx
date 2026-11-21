@@ -1,17 +1,30 @@
+"use client";
+
 import { Panel, PanelContent } from "@/components/layout/grid";
 import { FlipSentences } from "@/components/misc/flip-sentences";
 import { VerifiedIcon } from "@/components/misc/verified-icon";
+import { ImageCycler, ImageCyclerItem } from "@/components/ui/image-cycler";
 import { USER } from "@/data/user";
+import { useSound } from "@/hooks/soundcn/use-sound";
+import { clickSoftSound } from "@/lib/soundcn/click-soft";
 
 export const ProfileHeader = () => {
+	const [playSlide] = useSound(clickSoftSound, { volume: 0.4 });
+
 	return (
 		<Panel>
 			<PanelContent className="p-0 flex">
-				<img
-					src="https://avatars.githubusercontent.com/u/193064835?v=4"
-					alt=""
-					className="relative size-30 rounded-full min-[24rem]:size-32 sm:size-40 outline-1 outline-black/10 -outline-offset-1 dark:outline-white/10 m-0.5"
-				/>
+				<ImageCycler
+					className="size-30 rounded-full min-[24rem]:size-32 sm:size-40"
+					transition="glitch"
+					onIndexChange={() => playSlide()}
+				>
+					<ImageCyclerItem
+						src="https://avatars.githubusercontent.com/u/193064835?v=4"
+						alt="Github pfp"
+					/>
+					<ImageCyclerItem src="/adi.png" alt="Ghibli PFP" />
+				</ImageCycler>
 				<div className="border-l border-line grow flex flex-col justify-end">
 					<div className="flex w-full items-center gap-2 pl-4 border-y border-line">
 						<h1 className="type-6">{USER.displayName}</h1>

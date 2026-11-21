@@ -304,3 +304,52 @@
 		transition: opacity 300ms ease-out;
 	}
 }
+
+/* Image Cycler */
+
+@theme {
+	--animate-glitch: glitch 450ms steps(1, end) both;
+
+	@keyframes glitch {
+		0% {
+			clip-path: inset(40% 0 45% 0);
+			translate: -8px 0;
+			filter: hue-rotate(90deg) saturate(2);
+		}
+		15% {
+			clip-path: inset(10% 0 70% 0);
+			translate: 8px 0;
+			filter: hue-rotate(-60deg) contrast(1.4);
+		}
+		30% {
+			clip-path: inset(65% 0 15% 0);
+			translate: -5px 0;
+			filter: hue-rotate(180deg) saturate(2.5);
+		}
+		45% {
+			clip-path: inset(25% 0 50% 0);
+			translate: 6px 0;
+			filter: invert(0.15) hue-rotate(40deg);
+		}
+		60% {
+			clip-path: inset(0 0 80% 0);
+			translate: -3px 0;
+			filter: hue-rotate(-90deg);
+		}
+		75% {
+			clip-path: inset(50% 0 20% 0);
+			translate: 4px 0;
+			filter: saturate(2) contrast(1.3);
+		}
+		90% {
+			clip-path: inset(0 0 0 0);
+			translate: -2px 0;
+			filter: hue-rotate(20deg);
+		}
+		100% {
+			clip-path: inset(0 0 0 0);
+			translate: 0 0;
+			filter: none;
+		}
+	}
+}
