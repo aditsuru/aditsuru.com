@@ -6,10 +6,10 @@ import { VerifiedIcon } from "@/components/misc/verified-icon";
 import { ImageCycler, ImageCyclerItem } from "@/components/ui/image-cycler";
 import { USER } from "@/data/user";
 import { useSound } from "@/hooks/soundcn/use-sound";
-import { clickSoftSound } from "@/lib/soundcn/click-soft";
+import { back001Sound } from "@/lib/soundcn/back-001";
 
 export const ProfileHeader = () => {
-	const [playSlide] = useSound(clickSoftSound, { volume: 0.4 });
+	const [playSlide] = useSound(back001Sound, { volume: 0.4 });
 
 	return (
 		<Panel>
