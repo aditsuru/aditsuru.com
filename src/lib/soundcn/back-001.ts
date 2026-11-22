@@ -1,4 +1,4 @@
-import type { SoundAsset } from "@/lib/sound-types";
+import type { SoundAsset } from "@/lib/soundcn/sound-types";
 
 export const back001Sound: SoundAsset = {
 	name: "back-001",
