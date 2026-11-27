@@ -1,6 +1,7 @@
 {
 	"name": "aditsuru.com",
 	"version": "5.2.0",
+	"description": "A digital space for my projects, experiments, and creative work.",
 	"private": true,
 	"author": {
 		"name": "Adi",
