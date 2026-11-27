@@ -2,6 +2,7 @@ import { Hero } from "@/components/features/hero";
 import {
 	Panel,
 	PanelContent,
+	PanelDivider,
 	PanelStripeDivider,
 	PanelTitle,
 } from "@/components/layout/panel";
@@ -9,6 +10,7 @@ import {
 export default function Page() {
 	return (
 		<div>
+			<PanelDivider className="screen-line-bottom" />
 			<Hero />
 			<PanelStripeDivider />
 			<Panel>

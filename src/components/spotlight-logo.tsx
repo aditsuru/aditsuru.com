@@ -24,8 +24,8 @@ const transition: Transition = {
 const ANGLE = 30;
 
 /** How tall each slab is, and how far a press sinks its top face. */
-const THICK = 24;
-const PRESS = 12;
+const THICK = 36;
+const PRESS = 16;
 
 /** Margin inside the viewBox so 1px strokes aren't clipped. */
 const PAD = 1;
