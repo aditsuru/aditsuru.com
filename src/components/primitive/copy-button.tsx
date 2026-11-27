@@ -3,7 +3,7 @@
 import { CheckIcon, CircleXIcon, CopyIcon } from "lucide-react";
 import { motion } from "motion/react";
 import type { ComponentProps } from "react";
-import { IconSwap, IconSwapItem } from "@/components/icon-swap";
+import { IconSwap, IconSwapItem } from "@/components/primitive/icon-swap";
 import { Button } from "@/components/ui/button";
 import type { CopyState } from "@/hooks/use-copy-to-clipboard";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";

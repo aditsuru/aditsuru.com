@@ -169,5 +169,8 @@ export async function getCurrentSeason(
 	"use cache";
 	cacheLife("hours");
 
-	return getActiveSeason({ ...options, now: new Date() });
+	return getActiveSeason({
+		...options,
+		now: new Date(),
+	});
 }

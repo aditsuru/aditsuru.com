@@ -498,3 +498,18 @@
 @utility link-underline {
 	@apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
 }
+
+/* Shimmer */
+
+@theme inline {
+	--animate-shimmer: shimmer 1.6s ease-in-out infinite;
+
+	@keyframes shimmer {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateX(100%);
+		}
+	}
+}

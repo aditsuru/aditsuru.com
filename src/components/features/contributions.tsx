@@ -1,11 +1,10 @@
 import { cva } from "class-variance-authority";
 import { Suspense } from "react";
-
+import { Panel, PanelContent } from "@/components/layout/panel";
 import {
 	GitHubContributions,
 	GitHubContributionsFallback,
-} from "@/components/github-contributions";
-import { Panel, PanelContent } from "@/components/layout/panel";
+} from "@/components/primitive/github-contributions";
 import { USER } from "@/data/user";
 import { type ActiveSeasonId, getCurrentSeason } from "@/lib/get-active-season";
 import { getCachedContributions } from "@/lib/get-cached-contributions";

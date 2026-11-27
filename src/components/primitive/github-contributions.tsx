@@ -2,7 +2,7 @@
 
 import { format } from "date-fns";
 import { use } from "react";
-import type { Activity } from "@/components/contribution-graph";
+import type { Activity } from "@/components/primitive/contribution-graph";
 import {
 	ContributionGraph,
 	ContributionGraphBlock,
@@ -10,7 +10,7 @@ import {
 	ContributionGraphFooter,
 	ContributionGraphLegend,
 	ContributionGraphTotalCount,
-} from "@/components/contribution-graph";
+} from "@/components/primitive/contribution-graph";
 import { Spinner } from "@/components/ui/spinner";
 import {
 	Tooltip,
