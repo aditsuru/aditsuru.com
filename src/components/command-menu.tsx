@@ -10,7 +10,6 @@ import {
 	MonitorIcon,
 	MoonIcon,
 	SearchIcon,
-	Share2Icon,
 	SunIcon,
 	UserIcon,
 } from "lucide-react";
@@ -19,7 +18,7 @@ import { useTheme } from "next-themes";
 import { useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { AditsuruMark } from "@/components/aditsuru-mark";
-import { ReactIcon } from "@/components/icons";
+import { ReactIcon, XIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
 	Command,
@@ -83,7 +82,7 @@ const SECTIONS = [
 		title: "Socials",
 		href: "/#socials-section",
 		keywords: ["links", "contact", "profiles"],
-		Icon: Share2Icon,
+		Icon: XIcon,
 	},
 ];
 

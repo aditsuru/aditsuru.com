@@ -1,4 +1,5 @@
 import { Hero } from "@/components/features/hero";
+import { SocialLinks } from "@/components/features/social-links";
 import {
 	Panel,
 	PanelContent,
@@ -21,6 +22,7 @@ export default function Page() {
 					from interface to database.
 				</PanelContent>
 			</Panel>
+			<SocialLinks />
 		</div>
 	);
 }
