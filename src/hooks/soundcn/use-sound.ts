@@ -1,12 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { decodeAudioData, getAudioContext } from "@/lib/soundcn/sound-engine";
 import type {
 	SoundAsset,
 	UseSoundOptions,
 	UseSoundReturn,
-} from "@/lib/soundcn/sound-types";
+} from "@/lib/sound-types";
+import { decodeAudioData, getAudioContext } from "@/lib/soundcn/sound-engine";
 
 export function useSound(
 	sound: SoundAsset,
