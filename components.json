@@ -6,7 +6,7 @@
 	"tailwind": {
 		"config": "",
 		"css": "src/app/globals.css",
-		"baseColor": "neutral",
+		"baseColor": "zinc",
 		"cssVariables": true,
 		"prefix": ""
 	},
@@ -21,5 +21,7 @@
 	},
 	"menuColor": "default",
 	"menuAccent": "subtle",
-	"registries": {}
+	"registries": {
+		"@soundcn": "https://soundcn.xyz/r/{name}.json"
+	}
 }
