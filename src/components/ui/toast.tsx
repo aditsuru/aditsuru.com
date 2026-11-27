@@ -7,7 +7,7 @@ import { cn } from "cn"
 import { Button } from "@/components/ui/button"
 import { XIcon, CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
 import { useSound } from "@/hooks/soundcn/use-sound"
-import { notificationPopSound } from "@/lib/soundcn/notification-pop"
+import { useTiks } from "@rexa-developer/tiks/react"
 
 const toast = ToastPrimitive.createToastManager()
 
@@ -183,17 +183,17 @@ function ToastIcon({ type }: { type: string | undefined }) {
 
 function ToastList() {
   const { toasts } = ToastPrimitive.useToastManager()
-  const [play] = useSound(notificationPopSound, { volume: 0.25 })
+  const { success } = useTiks()
   const seenIds = React.useRef(new Set<string>())
 
   React.useEffect(() => {
     for (const toastItem of toasts) {
       if (!seenIds.current.has(toastItem.id)) {
         seenIds.current.add(toastItem.id)
-        play()
+        success()
       }
     }
-  }, [toasts, play])
+  }, [toasts, success])
 
   return toasts.map((toastItem) => (
     <Toast key={toastItem.id} toast={toastItem}>

@@ -1,5 +1,7 @@
 export const USER = {
 	displayName: "Aditya Chandra",
+	email: "me@aditsuru.com",
+	handle: "aditsuru",
 	displayPfps: [
 		{
 			src: "https://avatars.githubusercontent.com/u/193064835?v=4",
