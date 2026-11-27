@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Caveat, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/app/providers";
+import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { cn } from "@/lib/utils";
 
@@ -148,6 +149,7 @@ export default function RootLayout({
 								{children}
 							</div>
 						</main>
+						<Footer />
 					</div>
 				</Providers>
 			</body>

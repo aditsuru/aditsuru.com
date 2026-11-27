@@ -49,7 +49,7 @@ function Hero() {
 
 				<div className="border-line flex grow flex-col justify-end border-l">
 					<div className="border-line relative z-20 flex w-full items-center gap-2 border-y pl-4">
-						<h1 className="type-5 sm:type-6">{USER.displayName}</h1>
+						<h1 className="type-4 sm:type-6">{USER.displayName}</h1>
 						<VerifiedIcon className="size-4.5 select-none" />
 					</div>
 					<FlipSentences className="relative z-20 h-12.5 py-1 pl-4 sm:h-9">

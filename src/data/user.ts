@@ -1,6 +1,7 @@
 export const USER = {
 	displayName: "Aditya Chandra",
 	email: "me@aditsuru.com",
+	timeZone: "Asia/Kolkata",
 	handle: "aditsuru",
 	displayPfps: [
 		{
