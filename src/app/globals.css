@@ -437,27 +437,27 @@
 }
 
 @utility type-4 {
-	@apply text-[1.25rem] leading-[1.2] tracking-tighter font-bold text-balance;
+	@apply text-[1.25rem] leading-[1.2] tracking-tighter font-medium text-balance;
 }
 
 @utility type-5 {
-	@apply text-[1.563rem] leading-[1.2] tracking-tighter font-bold text-balance;
+	@apply text-[1.563rem] leading-[1.2] tracking-tighter font-medium text-balance;
 }
 
 @utility type-6 {
-	@apply text-[1.953rem] leading-[1.2] tracking-tighter font-bold text-balance;
+	@apply text-[1.953rem] leading-[1.2] tracking-tighter font-medium text-balance;
 }
 
 @utility type-7 {
-	@apply text-[2.441rem] leading-[1.2] tracking-tighter font-bold text-balance;
+	@apply text-[2.441rem] leading-[1.2] tracking-tighter font-semibold text-balance;
 }
 
 @utility type-8 {
-	@apply text-[3.052rem] leading-[1.2] tracking-tighter font-bold text-balance;
+	@apply text-[3.052rem] leading-[1.2] tracking-tighter font-semibold text-balance;
 }
 
 @utility type-9 {
-	@apply text-[3.815rem] leading-[1.2] tracking-tighter font-bold text-balance;
+	@apply text-[3.815rem] leading-[1.2] tracking-tighter font-semibold text-balance;
 }
 
 @utility type-button {

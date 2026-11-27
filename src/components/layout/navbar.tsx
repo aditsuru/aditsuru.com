@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { AditsuruMark } from "@/components/aditsuru-mark";
+import { BrandContextMenu } from "@/components/brand-context-menu";
 import { CommandMenu } from "@/components/command-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Separator } from "@/components/ui/separator";
@@ -27,14 +27,11 @@ function Navbar() {
 			<div className="screen-line-bottom h-2 w-full" aria-hidden="true" />
 
 			<div className="border-line mx-auto flex h-12 items-center justify-between border-x px-5 md:max-w-3xl">
-				<Link href="/" aria-label="Home" className="shrink-0">
-					<AditsuruMark className="text-foreground size-10" />
-				</Link>
-
-				<div className="flex items-center gap-2.5 max-sm:hidden">
+				<BrandContextMenu />
+				<div className="flex items-center gap-2.5">
 					<nav
 						aria-label="Main navigation"
-						className="flex items-center gap-4 px-1.5"
+						className="flex items-center gap-4 px-1.5 max-sm:hidden"
 					>
 						{NAV_ITEMS.map(({ title, href }) => (
 							<Link

@@ -34,16 +34,8 @@ import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
 const ICON_STYLE = "text-muted-foreground size-4";
 
-// The mark must be size-4.5, so it's centered inside a size-4 box.
-// This keeps the label aligned with the other items.
-const HomeIcon = () => (
-	<span className="flex size-4 shrink-0 items-center justify-center">
-		<AditsuruMark className="text-muted-foreground size-4.5 shrink-0" />
-	</span>
-);
-
 const PAGES = [
-	{ title: "Home", href: "/", Icon: HomeIcon },
+	{ title: "Home", href: "/", Icon: AditsuruMark },
 	{ title: "Components", href: "/components", Icon: ReactIcon },
 	{ title: "Blog", href: "/blog", Icon: BookOpenTextIcon },
 	{ title: "Projects", href: "/projects", Icon: BoxIcon },
@@ -123,9 +115,17 @@ export const CommandMenu = () => {
 
 	return (
 		<>
-			<Button variant="ghost" className="group" onClick={() => setOpen(true)}>
+			<Button
+				variant="ghost"
+				className="group"
+				onClick={() => setOpen(true)}
+				aria-label="Open command menu"
+				aria-haspopup="dialog"
+				aria-expanded={open}
+				aria-keyshortcuts="Control+K Meta+K"
+			>
 				<SearchIcon className="text-muted-foreground group-hover:text-foreground size-4.5 transition-all" />
-				<KbdGroup className="hidden md:flex">
+				<KbdGroup aria-hidden="true" className="hidden md:flex">
 					<Kbd>Ctrl</Kbd>
 					<Kbd>K</Kbd>
 				</KbdGroup>
@@ -133,7 +133,7 @@ export const CommandMenu = () => {
 
 			<CommandDialog open={open} onOpenChange={setOpen} className="sm:max-w-lg">
 				<Command className="bg-background">
-					<CommandInput placeholder="Search…" />
+					<CommandInput placeholder="Search…" aria-label="Search commands" />
 					<CommandList>
 						<CommandEmpty>No results found.</CommandEmpty>
 

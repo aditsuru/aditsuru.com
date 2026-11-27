@@ -20,11 +20,7 @@ const transition: Transition = {
 	stiffness: 200,
 };
 
-// ---------------------------------------------------------------------------
-// Geometry. Everything the mark draws comes from the numbers in this block.
-// ---------------------------------------------------------------------------
-
-/** Angle of the receding edges, measured from horizontal. 30 = isometric, 45 = your first version. */
+/** Angle of the receding edges, measured from horizontal. 30 = isometric, 45 = oblique. */
 const ANGLE = 30;
 
 /** How tall each slab is, and how far a press sinks its top face. */
@@ -214,13 +210,18 @@ const SLABS = GRID.map((grid, i) => {
 const W = Math.ceil(Math.max(...GRID.flat().map((p) => project(p)[0])) + PAD);
 const H = Math.ceil(Math.max(...SLABS.map((s) => s.front[1])) + PAD);
 
-/** Lowest corner of the whole mark. Both guide lines pass through it. */
+/** Lowest corner of the whole mark. */
 const LOWEST = SLABS.reduce((a, s) => (s.front[1] > a.front[1] ? s : a)).front;
+
+/** Bottom of the left corner of the T's top slab (slab 4 in GRID). */
+const T_LEFT = project(GRID[4][0]);
+const T_LEFT_BOTTOM: P = [T_LEFT[0], T_LEFT[1] + THICK];
 
 /** Dashed guide lines: a point and an angle in degrees (0 = horizontal, positive = down-right). */
 const GUIDES: { x: number; y: number; angle: number }[] = [
 	{ x: LOWEST[0], y: LOWEST[1], angle: -ANGLE }, // the base
 	{ x: LOWEST[0], y: LOWEST[1], angle: ANGLE }, // runs along the left leg
+	{ x: T_LEFT_BOTTOM[0], y: T_LEFT_BOTTOM[1], angle: ANGLE }, // runs along the bottom of the T's top slab, left end
 ];
 
 /** How far the guide lines run past the mark. Clip them with `overflow-clip` on a parent. */
@@ -246,14 +247,8 @@ export type SpotlightLogoProps = {
  * An isometric mark whose outline is traced by a gradient highlight that
  * follows the cursor, with a springy press and a tactile click sound.
  *
- * - `radialGradient` whose centre springs toward the pointer = the spotlight,
- *   drawn as a second stroke layered over each base outline.
- * - `whileTap="pressed"` morphs every slab's outline and slides each top face down.
- * - Two dashed guide lines live in the same coordinate system as the art, so
- *   they stay locked to it at any size.
- *
- * Put it inside a parent with `overflow-clip` so the guides stop at the parent's
- * edge instead of extending the page.
+ * Put it inside a parent with `overflow-clip` so the guide lines stop at the
+ * parent's edge instead of extending the page.
  */
 export function SpotlightLogo({ className, onPress }: SpotlightLogoProps) {
 	const id = useId().replace(/:/g, "");
@@ -396,7 +391,7 @@ export function SpotlightLogo({ className, onPress }: SpotlightLogoProps) {
 				})}
 			</g>
 
-			{/* The mark. Per slab: silhouette fill, hatched top face, outline, spotlight. */}
+			{/* Per slab: silhouette fill, hatched top face, outline, spotlight. */}
 			{SLABS.map((slab, i) => (
 				<g key={JSON.stringify(slab)}>
 					<motion.path
