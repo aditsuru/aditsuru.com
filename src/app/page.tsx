@@ -13,7 +13,6 @@ import {
 export default function Page() {
 	return (
 		<div>
-			<PanelStripeDivider className="screen-line-bottom" />
 			<Hero />
 			<PanelStripeDivider />
 			<Contributions />
