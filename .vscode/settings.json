@@ -12,9 +12,13 @@
 	},
 	"biome.enabled": true,
 	"biome.requireConfiguration": true,
+	"biome.lsp.bin": "./node_modules/.bin/biome",
 
 	// CSpell
 	"cSpell.enabled": true,
 	"cSpell.language": "en,en-US",
-	"cSpell.diagnosticLevel": "Information"
+	"cSpell.diagnosticLevel": "Information",
+
+	// Tailwind
+	"tailwindCSS.classFunctions": ["cva", "cn", "clsx", "cx"]
 }

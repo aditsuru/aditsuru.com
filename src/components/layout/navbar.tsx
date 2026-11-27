@@ -1,34 +1,57 @@
 import Link from "next/link";
 
-import { CommandMenu } from "@/components/misc/command-menu";
-import { ThemeToggle } from "@/components/misc/theme-toggle";
+import { BrandContextMenu } from "@/components/brand-context-menu";
+import { CommandMenu } from "@/components/command-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Separator } from "@/components/ui/separator";
 
-export const Navbar = () => {
+const NAV_ITEMS = [
+	{ title: "Components", href: "/components" },
+	{ title: "Blog", href: "/blog" },
+	{ title: "Projects", href: "/projects" },
+	{ title: "Favorites", href: "/favorites" },
+] as const;
+
+function NavDivider() {
 	return (
-		<header className="max-w-screen sticky top-0 bg-background z-50 screen-line-bottom overflow-x-clip px-2">
-			<div className="mx-auto md:max-w-3xl flex justify-between items-center border-x border-line pl-4 pr-2 py-2">
-				<Link href="/" aria-label="Home">
-					<img
-						src="/icon/logo-black.svg"
-						alt=""
-						className="size-10 dark:hidden"
-					/>
-					<img
-						src="/icon/logo-white.svg"
-						alt=""
-						className="hidden size-10 dark:block"
-					/>
-				</Link>
-				<div className="flex items-center gap-2">
+		<Separator
+			orientation="vertical"
+			className="data-vertical:h-4 data-vertical:self-center max-sm:hidden"
+		/>
+	);
+}
+
+function Navbar() {
+	return (
+		<header className="bg-background screen-line-bottom sticky top-0 z-50 max-w-screen overflow-x-clip px-2">
+			<div className="screen-line-bottom h-2 w-full" aria-hidden="true" />
+
+			<div className="border-line mx-auto flex h-12 items-center justify-between border-x px-5 md:max-w-3xl">
+				<BrandContextMenu />
+				<div className="flex items-center gap-2.5">
+					<nav
+						aria-label="Main navigation"
+						className="flex items-center gap-4 px-1.5 max-sm:hidden"
+					>
+						{NAV_ITEMS.map(({ title, href }) => (
+							<Link
+								key={href}
+								href={href}
+								className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+							>
+								{title}
+							</Link>
+						))}
+					</nav>
+
+					<NavDivider />
 					<CommandMenu />
-					<Separator
-						orientation="vertical"
-						className="max-sm:hidden data-vertical:h-5 data-vertical:self-center"
-					/>
+					<NavDivider />
 					<ThemeToggle />
 				</div>
 			</div>
 		</header>
 	);
-};
+}
+
+export { Navbar };

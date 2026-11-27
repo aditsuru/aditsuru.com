@@ -1,33 +1,24 @@
-import { Panel, PanelContent, StripeDivider } from "@/components/layout/grid";
-import { DotGrid } from "@/components/misc/dot-grid";
-import { About } from "@/components/section/about";
-import { ProfileHeader } from "@/components/section/profile-header";
-import { SocialLinks } from "@/components/section/social-links";
+import { Hero } from "@/components/features/hero";
+import {
+	Panel,
+	PanelContent,
+	PanelStripeDivider,
+	PanelTitle,
+} from "@/components/layout/panel";
 
-export default function Home() {
+export default function Page() {
 	return (
-		<>
-			<div className="w-full border-x border-line" />
-			<DotGrid />
-			<ProfileHeader />
-
-			<StripeDivider />
-
-			<SocialLinks />
-
-			<StripeDivider />
-
-			<About />
-
-			<StripeDivider />
-
+		<div>
+			<Hero />
+			<PanelStripeDivider />
 			<Panel>
-				<PanelContent className="flex justify-center items-center">
-					<p className="type-8 font-handwritten">Portfolio Under Development</p>
+				<PanelTitle render={<h2>About Me</h2>} />
+				<PanelContent>
+					I'm Adi — a self-taught full-stack developer and design engineer with
+					2+ years of experience, comfortable working across the whole stack,
+					from interface to database.
 				</PanelContent>
 			</Panel>
-
-			<StripeDivider />
-		</>
+		</div>
 	);
 }

@@ -43,6 +43,7 @@ next-env.d.ts
 
 # Media
 *.mp4
+*.png
 *.jpg
 *.jpeg
 *.mp3
@@ -50,5 +51,5 @@ next-env.d.ts
 
 # Misc
 _scratchpad.md
-_cheatsheet.md
 /temp
+legacy*

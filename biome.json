@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.6.8/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!src/components/ui", "!**/*.svg"]
+		"includes": ["**", "!src/components/ui/*", "!legacy*"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -22,8 +22,21 @@
 			"preset": "recommended",
 			"performance": {
 				"noImgElement": "off"
+			},
+			"nursery": {
+				"useTailwindSortedClasses": {
+					"level": "on",
+					"fix": "safe"
+				}
+			},
+			"correctness": {
+				"noChildrenProp": "off"
 			}
 		}
+	},
+	"tailwind": {
+		"mergeFunctions": ["clsx", "cn", "twMerge"],
+		"variantFunctions": ["cva", "tv"]
 	},
 	"javascript": {
 		"formatter": {

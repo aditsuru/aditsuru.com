@@ -1,8 +1,6 @@
 "use client";
 
-import { useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
-
 import { decodeAudioData, getAudioContext } from "@/lib/soundcn/sound-engine";
 import type {
 	SoundAsset,
@@ -15,10 +13,10 @@ export function useSound(
 	options: UseSoundOptions = {}
 ): UseSoundReturn {
 	const {
-		volume = 0.5,
+		volume = 1,
 		playbackRate = 1,
 		interrupt = false,
-		soundEnabled: _soundEnabled = true,
+		soundEnabled = true,
 		onPlay,
 		onEnd,
 		onPause,
@@ -32,9 +30,6 @@ export function useSound(
 	const sourceRef = useRef<AudioBufferSourceNode | null>(null);
 	const gainRef = useRef<GainNode | null>(null);
 	const bufferRef = useRef<AudioBuffer | null>(null);
-
-	const shouldReduceMotion = useReducedMotion();
-	const soundEnabled = _soundEnabled && !shouldReduceMotion;
 
 	useEffect(() => {
 		let cancelled = false;

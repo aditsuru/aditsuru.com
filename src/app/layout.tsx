@@ -144,7 +144,7 @@ export default function RootLayout({
 					<div className="relative isolate flex min-h-dvh flex-col">
 						<Navbar />
 						<main className="flex flex-1 flex-col overflow-x-clip px-2">
-							<div className="mx-auto flex w-full flex-1 flex-col md:max-w-3xl">
+							<div className="border-line mx-auto flex w-full flex-1 flex-col border-x md:max-w-3xl">
 								{children}
 							</div>
 						</main>

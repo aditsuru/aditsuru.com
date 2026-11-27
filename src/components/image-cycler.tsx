@@ -25,8 +25,6 @@ const imageCyclerItemVariants = cva(
 				zoom: "scale-110 opacity-0 transition-[opacity,scale] duration-700 ease-out data-active:scale-100 data-active:opacity-100",
 				nudge:
 					"translate-y-2 opacity-0 transition-[opacity,translate] duration-300 ease-out data-active:translate-y-0 data-active:opacity-100",
-				glitch:
-					"data-active:animate-glitch z-0 opacity-0 [transition:opacity_0s_linear_450ms] data-active:z-10 data-active:opacity-100 data-active:[transition:none] motion-reduce:data-active:animate-none",
 				morph:
 					"scale-95 opacity-0 blur-xs brightness-110 transition-[opacity,scale,filter] duration-500 ease-in-out data-active:scale-100 data-active:opacity-100 data-active:blur-none data-active:brightness-100",
 			},
