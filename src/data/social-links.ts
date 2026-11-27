@@ -5,7 +5,7 @@ import {
 	XIcon,
 } from "@/components/icons";
 
-export const SOCIAL_LINKS = [
+export const SOCIAL_LINKS: SocialLinks = [
 	{
 		title: "Twitter",
 		handle: "@aditsuru",
@@ -31,3 +31,10 @@ export const SOCIAL_LINKS = [
 		Icon: InstagramIcon,
 	},
 ];
+
+type SocialLinks = {
+	title: string;
+	handle: string;
+	href: string;
+	Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element;
+}[];

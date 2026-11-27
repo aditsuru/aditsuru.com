@@ -11,7 +11,7 @@ import {
 	ContextMenuTrigger,
 } from "@/components/ui/context-menu";
 import { toast } from "@/components/ui/toast";
-import { BRAND_ASSETS_URL } from "@/content/user";
+import { BRAND_ASSETS_URL } from "@/data/user";
 
 function BrandContextMenu() {
 	const handleOpenInNewTab = () => {

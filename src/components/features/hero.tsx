@@ -9,7 +9,7 @@ import { VerifiedIcon } from "@/components/icons";
 import { ImageCycler, ImageCyclerItem } from "@/components/image-cycler";
 import { Panel } from "@/components/layout/panel";
 import { SpotlightLogo } from "@/components/spotlight-logo";
-import { USER } from "@/content/user";
+import { USER } from "@/data/user";
 import { useSound } from "@/hooks/soundcn/use-sound";
 import { hoverTickSound } from "@/lib/soundcn/hover-tick";
 

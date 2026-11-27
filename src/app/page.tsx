@@ -1,3 +1,4 @@
+import { Contributions } from "@/components/features/contributions";
 import { Hero } from "@/components/features/hero";
 import { SocialLinks } from "@/components/features/social-links";
 import {
@@ -14,6 +15,8 @@ export default function Page() {
 			<PanelDivider className="screen-line-bottom" />
 			<Hero />
 			<PanelStripeDivider />
+			<Contributions />
+			<PanelStripeDivider />
 			<Panel>
 				<PanelTitle render={<h2>About Me</h2>} />
 				<PanelContent>
@@ -22,6 +25,7 @@ export default function Page() {
 					from interface to database.
 				</PanelContent>
 			</Panel>
+			<PanelDivider />
 			<SocialLinks />
 		</div>
 	);

@@ -11,8 +11,8 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { SOCIAL_LINKS } from "@/content/social-links";
-import { USER } from "@/content/user";
+import { SOCIAL_LINKS } from "@/data/social-links";
+import { USER } from "@/data/user";
 
 export function SocialLinks() {
 	return (
