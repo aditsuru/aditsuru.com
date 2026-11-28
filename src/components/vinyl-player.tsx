@@ -16,6 +16,7 @@ type VinylCoverProps = {
 	href: string;
 	vinyl?: string;
 	label?: string;
+	loading?: "eager" | "lazy";
 };
 
 function VinylCover({
@@ -24,6 +25,7 @@ function VinylCover({
 	href,
 	vinyl = "/vinyl-record.png",
 	label = "Open song",
+	loading = "eager",
 }: VinylCoverProps) {
 	return (
 		<a
@@ -40,6 +42,7 @@ function VinylCover({
 				src={cover}
 				className="relative z-20 size-50 rounded-[inherit] outline-[1px] -outline-offset-1 outline-black/15 brightness-75 select-none dark:outline-white/15"
 				draggable="false"
+				loading={loading}
 			/>
 
 			<div
@@ -55,6 +58,7 @@ function VinylCover({
 					src={vinyl}
 					className="size-full scale-[1.25] select-none"
 					draggable={false}
+					loading={loading}
 				/>
 
 				{/* Cover as the label */}
@@ -213,8 +217,8 @@ function VinylPlayer({
 	...props
 }: VinylCoverProps & VinylPlayerProps) {
 	return (
-		<div className="grid max-sm:justify-items-center sm:grid-cols-2">
-			<div className="max-sm:-translate-x-1/4">
+		<div className="grid justify-items-start max-md:justify-items-center md:grid-cols-2">
+			<div className="translate-x-0 max-md:-translate-x-1/4">
 				<VinylCover playing={playing} {...props} />
 			</div>
 			{lyrics && lines && (
