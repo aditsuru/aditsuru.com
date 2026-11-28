@@ -190,7 +190,7 @@ export function Footer() {
 						</Field>
 
 						<Field label="Approved by">
-							<span>Me (LOL)</span>
+							<span>me lol</span>
 						</Field>
 					</dl>
 				</div>

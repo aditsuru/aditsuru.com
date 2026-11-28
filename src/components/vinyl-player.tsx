@@ -173,7 +173,7 @@ function VinylLyrics({
 						<motion.p
 							key={line}
 							aria-hidden="true"
-							className="font-poppings col-start-1 row-start-1 text-[1.35rem] leading-[1.2] font-bold tracking-tighter text-balance"
+							className="font-lyrics col-start-1 row-start-1 text-[1.35rem] leading-[1.2] font-bold tracking-tighter text-balance"
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}

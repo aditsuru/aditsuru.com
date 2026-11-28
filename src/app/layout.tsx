@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Caveat, DM_Sans, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/app/providers";
 import { Footer } from "@/components/layout/footer";
@@ -24,11 +24,10 @@ export const fontHandwritten = Caveat({
 	variable: "--font-handwritten",
 });
 
-export const poppins = Poppins({
-	weight: ["400", "500", "600", "700"],
+export const dmSans = DM_Sans({
 	subsets: ["latin"],
 	display: "swap",
-	variable: "--font-poppins",
+	variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -144,7 +143,7 @@ export default function RootLayout({
 				geistMono.variable,
 				geist.variable,
 				fontHandwritten.variable,
-				poppins.variable
+				dmSans.variable
 			)}
 			suppressHydrationWarning
 		>
