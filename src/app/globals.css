@@ -44,6 +44,7 @@
 	--font-serif: var(--font-serif);
 	--font-handwritten: var(--font-handwritten);
 	--font-heading: var(--font-sans);
+	--font-poppings: var(var(--font-poppings));
 
 	--font-mono--font-feature-settings: "ss01", "zero";
 

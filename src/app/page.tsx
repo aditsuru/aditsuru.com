@@ -1,6 +1,7 @@
 import { Contributions } from "@/components/features/contributions";
 import { Hero } from "@/components/features/hero";
 import { SocialLinks } from "@/components/features/social-links";
+import { VinylLyrics } from "@/components/features/vinyl-lyrics";
 import { Greeter } from "@/components/greeter";
 import {
 	Panel,
@@ -27,6 +28,8 @@ export default function Page() {
 			</Panel>
 			<PanelDivider />
 			<SocialLinks />
+			<PanelStripeDivider />
+			<VinylLyrics />
 		</div>
 	);
 }
