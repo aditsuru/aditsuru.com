@@ -2,8 +2,10 @@ import Link from "next/link";
 
 export default function NotFound() {
 	return (
-		<Link href="/" className="type-2 underline underline-offset-4">
-			Back to home
-		</Link>
+		<div className="flex w-full flex-1 items-center justify-center">
+			<Link href="/" className="type-3 underline underline-offset-4">
+				<span>Back to home</span>
+			</Link>
+		</div>
 	);
 }
