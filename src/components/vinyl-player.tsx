@@ -9,6 +9,7 @@ import {
 	usePageInView,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { SpotifyIcon } from "@/components/icons";
 
 type VinylCoverProps = {
 	playing?: boolean;
@@ -40,7 +41,7 @@ function VinylCover({
 			<img
 				alt=""
 				src={cover}
-				className="relative z-20 size-50 rounded-[inherit] outline-[1px] -outline-offset-1 outline-black/15 brightness-75 select-none dark:outline-white/15"
+				className="relative z-20 size-50 rounded-[inherit] outline-[1px] -outline-offset-1 outline-black/15 brightness-90 select-none dark:outline-white/15"
 				draggable="false"
 				loading={loading}
 			/>
@@ -63,7 +64,7 @@ function VinylCover({
 
 				{/* Cover as the label */}
 				<div
-					className="absolute aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-cover bg-center brightness-75"
+					className="absolute aspect-square -translate-x-1/2 -translate-y-1/2 rounded-full bg-cover bg-center brightness-90"
 					style={{
 						left: "50%",
 						top: "50%",
@@ -168,7 +169,7 @@ function VinylLyrics({
 			<section
 				ref={ref}
 				aria-label="Lyrics"
-				className="hidden h-50 items-center justify-items-start pr-1.5 pl-6 sm:grid"
+				className="grid h-50 items-center justify-items-start pr-6 pl-8"
 			>
 				<p className="sr-only">{lines.map((l) => l.text).join(" ")}</p>
 
@@ -207,6 +208,7 @@ type VinylPlayerProps = {
 	lyrics?: boolean;
 	lines?: LyricLine[];
 	loopDelay?: number;
+	spotifyLogo?: boolean;
 };
 
 function VinylPlayer({
@@ -214,15 +216,19 @@ function VinylPlayer({
 	lines,
 	loopDelay,
 	playing = true,
+	spotifyLogo = true,
 	...props
 }: VinylCoverProps & VinylPlayerProps) {
 	return (
-		<div className="grid justify-items-start max-md:justify-items-center md:grid-cols-2">
-			<div className="translate-x-0 max-md:-translate-x-1/4">
+		<div className="relative grid max-md:justify-items-center md:grid-cols-2">
+			<div className="translate-x-0 max-md:-translate-x-1/4 max-md:pt-8">
 				<VinylCover playing={playing} {...props} />
 			</div>
 			{lyrics && lines && (
 				<VinylLyrics lines={lines} loopDelay={loopDelay} playing={playing} />
+			)}
+			{spotifyLogo && (
+				<SpotifyIcon className="absolute right-0 bottom-0 size-5" />
 			)}
 		</div>
 	);
